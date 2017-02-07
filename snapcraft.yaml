@@ -1,4 +1,4 @@
-name: nodered
+name: nodered-madper
 version: 0.13
 summary: A visual tool for wiring the Internet of Things
 description: Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways.
@@ -12,12 +12,15 @@ apps:
     plugs:
       - network-bind
       - network
+      - serial-port
 
 parts:
   red:
     plugin: nodejs
     node-packages:
       - node-red
+      - node-red-contrib-slack
+      - node-red-contrib-alexa
   settings:
     plugin: dump
     source: settings
